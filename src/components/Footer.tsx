@@ -1,3 +1,5 @@
+import { MdCopyright } from "react-icons/md";
+import { FaLinkedinIn, FaTwitter, FaGithub, FaWhatsapp } from "react-icons/fa";
 import {
 	Container,
 	Icon,
@@ -6,8 +8,6 @@ import {
 	Text,
 	useMediaQuery,
 } from "@chakra-ui/react";
-import { MdCopyright } from "react-icons/md";
-import { FaLinkedinIn, FaTwitter, FaGithub, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
 	const [isLargerThan768] = useMediaQuery("(min-width: 48em)", {

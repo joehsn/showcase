@@ -8,6 +8,7 @@ import {
 	DrawerOverlay,
 	Flex,
 	Icon,
+	MenuButton,
 	Stack,
 	Link as StyledLink,
 	useColorMode,
@@ -69,6 +70,9 @@ export default function MobileDrawer({
 				</DrawerHeader>
 				<DrawerBody>
 					<Flex direction="column" rowGap={4} justify="center">
+						<Button variant="ghost" rounded="full" as={Link} href="/">
+							Home
+						</Button>
 						{pages.map((page, idx) => (
 							<Button
 								key={`${page.toLowerCase()}-${idx}`}

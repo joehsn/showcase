@@ -1,22 +1,43 @@
 {
-  "name": "showcase",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "20.2.5",
-    "@types/react": "18.2.7",
-    "@types/react-dom": "18.2.4",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.4",
-    "next": "13.4.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.4"
-  }
+	"name": "showcase",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"prettier": "prettier --check .",
+		"prettier:fix": "prettier -w .",
+		"prepare": "husky install",
+		"theme": "chakra-cli tokens src/lib/theme.ts"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.6.1",
+		"@emotion/react": "^11.11.0",
+		"@emotion/styled": "^11.11.0",
+		"@hookform/resolvers": "^3.1.0",
+		"@types/node": "20.2.5",
+		"@types/react": "18.2.7",
+		"@types/react-dom": "18.2.4",
+		"eslint": "8.41.0",
+		"eslint-config-next": "13.4.4",
+		"framer-motion": "^10.12.16",
+		"glob": "^10.2.6",
+		"gray-matter": "^4.0.3",
+		"next": "13.4.4",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-hook-form": "^7.44.1",
+		"react-icons": "^4.9.0",
+		"typescript": "5.0.4",
+		"yup": "^1.2.0"
+	},
+	"devDependencies": {
+		"@chakra-ui/cli": "^2.4.1",
+		"@types/glob": "^8.1.0",
+		"eslint-config-prettier": "^8.8.0",
+		"husky": "^8.0.0",
+		"prettier": "^2.8.8"
+	}
 }

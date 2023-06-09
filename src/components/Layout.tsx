@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<Box as="main">
 			<Navbar />
-			<Container maxW="4xl" py="28">
+			<Container maxW="4xl" py="36">
 				{children}
 			</Container>
 			<Footer />
