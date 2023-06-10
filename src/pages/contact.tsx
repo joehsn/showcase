@@ -58,6 +58,9 @@ export default function Contact() {
 				<title>Contact me</title>
 			</Head>
 			<Layout>
+				<Heading as="h1" mb="24" textAlign="center" size="3xl">
+					Love to hear from you!
+				</Heading>
 				<Flex flexDir={{ base: "column-reverse", md: "row" }} gap={4}>
 					<Flex
 						as="form"

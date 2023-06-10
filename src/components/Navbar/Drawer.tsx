@@ -8,15 +8,12 @@ import {
 	DrawerOverlay,
 	Flex,
 	Icon,
-	MenuButton,
-	Stack,
-	Link as StyledLink,
 	useColorMode,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { MdLightMode, MdDarkMode, MdClose } from "react-icons/md";
-import { FaLinkedinIn, FaTwitter, FaGithub, FaWhatsapp } from "react-icons/fa";
 import type { MutableRefObject } from "react";
+import Social from "../SocialLinks";
 
 interface Props {
 	pages: string[];
@@ -84,43 +81,13 @@ export default function MobileDrawer({
 								{page}
 							</Button>
 						))}
+						<Button as={Link} href="/contact" colorScheme="blue" rounded="full">
+							Get in touch
+						</Button>
 					</Flex>
 				</DrawerBody>
 				<DrawerFooter>
-					<Stack direction="row" w="full" justify="center" spacing={4}>
-						<StyledLink
-							href="https://wa.me/message/2CEEIOGIE6MAO1"
-							_hover={{
-								color: "blue.400",
-							}}
-						>
-							<Icon as={FaWhatsapp} boxSize={6} />
-						</StyledLink>
-						<StyledLink
-							href="https://linkedin.com/in/joehsn"
-							_hover={{
-								color: "blue.400",
-							}}
-						>
-							<Icon as={FaLinkedinIn} boxSize={6} />
-						</StyledLink>
-						<StyledLink
-							href="https://twitter.com/_joehsn"
-							_hover={{
-								color: "blue.400",
-							}}
-						>
-							<Icon as={FaTwitter} boxSize={6} />
-						</StyledLink>
-						<StyledLink
-							href="https://github.com/joehsn"
-							_hover={{
-								color: "blue.400",
-							}}
-						>
-							<Icon as={FaGithub} boxSize={6} />
-						</StyledLink>
-					</Stack>
+					<Social dir="row" isFull />
 				</DrawerFooter>
 			</DrawerContent>
 		</Drawer>

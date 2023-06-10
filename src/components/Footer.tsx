@@ -1,13 +1,6 @@
 import { MdCopyright } from "react-icons/md";
-import { FaLinkedinIn, FaTwitter, FaGithub, FaWhatsapp } from "react-icons/fa";
-import {
-	Container,
-	Icon,
-	Link,
-	Stack,
-	Text,
-	useMediaQuery,
-} from "@chakra-ui/react";
+import { Container, Icon, Text, useMediaQuery } from "@chakra-ui/react";
+import Social from "./SocialLinks";
 
 export default function Footer() {
 	const [isLargerThan768] = useMediaQuery("(min-width: 48em)", {
@@ -32,37 +25,7 @@ export default function Footer() {
 				<Icon as={MdCopyright} boxSize="5" /> Copyright reserved -{" "}
 				{new Date().getFullYear()}
 			</Text>
-			{isLargerThan768 ? (
-				<Stack direction="row" spacing={4}>
-					<Link
-						href="https://wa.me/message/2CEEIOGIE6MAO1"
-						_hover={{
-							color: "whatsapp.400",
-						}}
-					>
-						<Icon as={FaWhatsapp} boxSize={6} />
-					</Link>
-					<Link
-						href="https://linkedin.com/in/joehsn"
-						_hover={{
-							color: "blue.400",
-						}}
-					>
-						<Icon as={FaLinkedinIn} boxSize={6} />
-					</Link>
-					<Link
-						href="https://twitter.com/_joehsn"
-						_hover={{
-							color: "cyan.400",
-						}}
-					>
-						<Icon as={FaTwitter} boxSize={6} />
-					</Link>
-					<Link href="https://github.com/joehsn">
-						<Icon as={FaGithub} boxSize={6} />
-					</Link>
-				</Stack>
-			) : null}
+			{isLargerThan768 ? <Social dir="row" /> : null}
 		</Container>
 	);
 }

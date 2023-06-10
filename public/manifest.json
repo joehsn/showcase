@@ -1,7 +1,13 @@
 {
 	"name": "Youssef Hassan - NextGen web developer",
-	"short_name": "@joehsn - web dev",
-	"start_url": "/",
+	"short_name": "@joehsn",
+	"start_url": ".",
+	"dir": "ltr",
+	"lang": "en",
+	"display": "standalone",
+	"background_color": "#fff",
+	"theme_color": "#fff",
+	"description": "A portfolio website",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",
@@ -14,7 +20,10 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
-	"display": "standalone"
+	"related_applications": [
+		{
+			"platform": "chrome",
+			"url": "https://joehsn.vercel.app"
+		}
+	]
 }
