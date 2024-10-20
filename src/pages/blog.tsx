@@ -21,11 +21,6 @@ export default function Blog({ posts }: Props) {
 				<Heading w="full" textAlign="center">
 					Blog
 				</Heading>
-				<Text fontSize="8xl" w="full" textAlign="center">
-					{posts.map((post, idx) => (
-						<div key={idx}>{post.content}</div>
-					))}
-				</Text>
 			</Layout>
 		</>
 	);
@@ -33,7 +28,6 @@ export default function Blog({ posts }: Props) {
 
 export async function getStaticProps() {
 	const posts = getAllPosts();
-	console.log(posts);
 
 	return {
 		props: {
