@@ -1,10 +1,14 @@
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import { Heading, Text } from "@chakra-ui/react";
-import { getAllPosts } from "@/utils/getPosts";
+import { getAllPosts, Post } from "@/utils/getPosts";
 import { useEffect } from "react";
 
-export default function Blog({ posts }) {
+type Props = {
+	posts: Post[];
+};
+
+export default function Blog({ posts }: Props) {
 	useEffect(() => {
 		console.log(JSON.stringify(posts));
 	}, [posts]);
@@ -19,7 +23,7 @@ export default function Blog({ posts }) {
 				</Heading>
 				<Text fontSize="8xl" w="full" textAlign="center">
 					{posts.map((post, idx) => (
-						<div key={idx}>{post}</div>
+						<div key={idx}>{post.content}</div>
 					))}
 				</Text>
 			</Layout>

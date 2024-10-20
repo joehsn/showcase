@@ -12,7 +12,7 @@ export interface PostMeta {
 	date: string;
 }
 
-interface Post {
+export interface Post {
 	content: string;
 	meta: PostMeta;
 }
