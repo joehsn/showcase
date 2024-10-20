@@ -1,11 +1,19 @@
 import { extendTheme } from "@chakra-ui/react";
 import { inputTheme } from "./input";
 import { textareaTheme } from "./textarea";
+import "@fontsource/ia-writer-mono";
 
 export const theme = extendTheme({
 	config: {
 		initialColorMode: "system",
 		useSystemColorMode: true,
+	},
+	styles: {
+		global: (props: { colorMode: string }) => ({
+			"html, body": {
+				backgroundColor: props.colorMode == "dark" ? "blue.800" : "white",
+			},
+		}),
 	},
 	colors: {
 		brand: {
@@ -14,9 +22,9 @@ export const theme = extendTheme({
 		},
 	},
 	fonts: {
-		body: "var(--font-vidaloka)",
-		heading: "var(--font-roboto)",
-		mono: "var(--font-jetBrain)",
+		body: "var(--font-montserrat)",
+		heading: "var(--font-raleway)",
+		mono: "var(--font-ia-writer)",
 	},
 	components: { Input: inputTheme, Textarea: textareaTheme },
 });

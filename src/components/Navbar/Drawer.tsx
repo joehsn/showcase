@@ -14,9 +14,15 @@ import Link from "next/link";
 import { MdLightMode, MdDarkMode, MdClose } from "react-icons/md";
 import type { MutableRefObject } from "react";
 import Social from "../SocialLinks";
+import Customs from "@/lib/customs";
+
+type Page = {
+	title: string;
+	href: string;
+};
 
 interface Props {
-	pages: string[];
+	pages: Page[];
 	isOpen: boolean;
 	onClose: () => void;
 	menuBtn: MutableRefObject<null>;
@@ -29,6 +35,7 @@ export default function MobileDrawer({
 	menuBtn,
 }: Props) {
 	const { colorMode, toggleColorMode } = useColorMode();
+	const { bgColor } = Customs();
 	return (
 		<Drawer
 			isOpen={isOpen}
@@ -43,13 +50,9 @@ export default function MobileDrawer({
 					justifyContent="space-between"
 					alignItems="center"
 					py="6"
+					bgColor={bgColor}
 				>
-					<Button
-						variant="outline"
-						colorScheme="gray"
-						onClick={toggleColorMode}
-						rounded="full"
-					>
+					<Button variant="outline" onClick={toggleColorMode} rounded="full">
 						{colorMode === "light" ? (
 							<Icon as={MdDarkMode} boxSize={4} />
 						) : (
@@ -65,20 +68,20 @@ export default function MobileDrawer({
 						<Icon as={MdClose} boxSize={6} />
 					</Button>
 				</DrawerHeader>
-				<DrawerBody>
+				<DrawerBody bgColor={bgColor}>
 					<Flex direction="column" rowGap={4} justify="center">
 						<Button variant="ghost" rounded="full" as={Link} href="/">
 							Home
 						</Button>
 						{pages.map((page, idx) => (
 							<Button
-								key={`${page.toLowerCase()}-${idx}`}
+								key={`${page.href}-${idx}`}
 								variant="ghost"
 								rounded="full"
 								as={Link}
-								href={page.toLowerCase()}
+								href={page.href}
 							>
-								{page}
+								{page.title}
 							</Button>
 						))}
 						<Button as={Link} href="/contact" colorScheme="blue" rounded="full">
@@ -86,7 +89,7 @@ export default function MobileDrawer({
 						</Button>
 					</Flex>
 				</DrawerBody>
-				<DrawerFooter>
+				<DrawerFooter bgColor={bgColor}>
 					<Social dir="row" isFull />
 				</DrawerFooter>
 			</DrawerContent>

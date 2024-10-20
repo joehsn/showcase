@@ -1,12 +1,23 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, ContainerProps } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface Props extends ContainerProps {
+	children: React.ReactNode;
+}
+
+export default function Layout({ children, ...rest }: Props) {
 	return (
-		<Box as="main">
+		<Box as="main" position="relative">
 			<Navbar />
-			<Container maxW="4xl" py="36">
+			<Container
+				maxW="4xl"
+				px={{
+					base: 4,
+					lg: 0,
+				}}
+				{...rest}
+			>
 				{children}
 			</Container>
 			<Footer />

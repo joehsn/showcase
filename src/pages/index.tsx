@@ -1,6 +1,8 @@
 import Head from "next/head";
-import { Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import Layout from "@/components/Layout";
+import Avatar from "@/components/Avatar";
+import Link from "next/link";
 
 export default function Home() {
 	return (
@@ -16,33 +18,64 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="manifest" href="manifest.json" />
 				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 			</Head>
-			<Layout>
-				<Text
-					fontSize={{ base: "3xl", lg: "4xl" }}
-					textAlign={{ base: "center", lg: "start" }}
+			<Layout pb={16}>
+				<Flex
+					direction={{
+						base: "column-reverse",
+						md: "row",
+					}}
+					rowGap={{
+						base: 8,
+						md: 0,
+					}}
+					alignItems="center"
+					columnGap={4}
 				>
-					I&rsquo;m
-				</Text>
-				<Heading
-					as="h1"
-					w="full"
-					fontSize={{ base: "6xl", lg: "8xl" }}
-					whiteSpace={{ lg: "nowrap" }}
-					letterSpacing={{ lg: "0.25rem" }}
-					textAlign="center"
-					lineHeight={{ base: "0.9", lg: "0.7" }}
-				>
-					YOUSSEF HASSAN
-				</Heading>
-				<Text
-					fontSize={{ base: "3xl", lg: "4xl" }}
-					w="full"
-					textAlign={{ base: "center", lg: "end" }}
-				>
-					Front-end web developer
-				</Text>
+					<Box>
+						<Text as="div" fontSize="4xl">
+							Hello there! 👋
+						</Text>
+						<Heading
+							as="div"
+							size={{
+								base: "4xl",
+								md: "3xl",
+							}}
+							mb={2}
+							lineHeight="short"
+						>
+							I&rsquo;m Youssef Hassan
+						</Heading>
+						<Text fontSize="xl" mb={8}>
+							A self-taught front-end developer who lives for turning ideas into
+							awesome websites.
+						</Text>
+						<Button
+							colorScheme="blue"
+							rounded="full"
+							as={Link}
+							href="/about-me"
+						>
+							More about me
+						</Button>
+					</Box>
+					<Flex
+						w={{
+							base: "full",
+							md: "50%",
+						}}
+						justify="center"
+					>
+						<Avatar
+							w={{
+								base: "350px",
+								md: "250px",
+							}}
+						/>
+					</Flex>
+				</Flex>
 			</Layout>
 		</>
 	);

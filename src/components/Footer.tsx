@@ -10,7 +10,7 @@ export default function Footer() {
 	return (
 		<Container
 			maxW="4xl"
-			py="4"
+			py="8"
 			display="flex"
 			justifyContent="space-between"
 			alignItems="center"
